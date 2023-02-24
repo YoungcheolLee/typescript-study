@@ -4,7 +4,7 @@ interface Params {
     age: number;
 }
 
-// funcParam 변수를 Params의 배열로 선언하고 빈 배열을 초기값으로 할당
+// funcParam 변수를 myVariable의 배열로 선언하고 빈 배열을 초기값으로 할당
 let funcParam: Params[] = [{name:"고길동", age:30}];
 
 // 1. myFunc 함수를 생성 
@@ -14,6 +14,6 @@ function myFunc(param: Params) {
     return funcParam = [...funcParam, param];
 }
 
-// name:홍길동, age:20 의 값을 할당한 후 myFunc 함수 실행
+// name:홍길동, age:20 의 값을 할당한 후 myFUnc 함수 실행
 myFunc({name:"홍길동", age:20});
 console.log(funcParam);
