@@ -17,3 +17,7 @@ function myFunc(param: Params) {
 // name:홍길동, age:20 의 값을 할당한 후 myFUnc 함수 실행
 myFunc({name:"홍길동", age:20});
 console.log(funcParam);
+
+// name:고길동, age:32 의 값을 할당한 후 myFUnc 함수 실행하여 데이터 추가
+myFunc({name:"남길동", age:32});
+console.log(funcParam);
