@@ -10,7 +10,7 @@
 // =====================================================================================================
 
 // type alias 정의
-type Skill = "FIRE" | "WIND" | "ARROW" ;
+type Skill = "FIRE" | "WIND" | "ARROW" | "ICE" | "ELEC" ;
 
 // GameLife interface 정의
 interface GameLife {
@@ -39,7 +39,11 @@ class GameObject<T> {
 const instanceMonster = new GameObject<Monster>();
 const instanceCharacter = new GameObject<Character>();
 
-const character = instanceCharacter.data;
+// instanceChracter에 data push
+instanceCharacter.data.push({username:"abc", LV:1, HP:1, MP:1, skillTree:["ARROW", "ELEC", "ICE"]});
+
+// instanceCharacter의 값을 콘솔에 출력
+console.log("instanceCharacter :", instanceCharacter.data.map((item)=>item));
 
 // My Function 정의
 // => 의 이유
