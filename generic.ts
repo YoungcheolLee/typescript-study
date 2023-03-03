@@ -9,7 +9,7 @@
 // 객체 생성방법? new와 클래스의 이름 뒤에 () 를 붙여 생성한다.
 // =====================================================================================================
 
-// type alias 정의
+// type alias 정의 UnionType
 type Skill = "FIRE" | "WIND" | "ARROW" | "ICE" | "ELEC" ;
 
 // GameLife interface 정의
@@ -22,7 +22,7 @@ interface GameLife {
 // Character interface 정의
 interface Character extends GameLife {
     username : string;
-    skillTree : Array<Skill>
+    skillTree : Array<Skill>;
 }
 
 // Monster interface 정의
@@ -39,10 +39,16 @@ class GameObject<T> {
 const instanceMonster = new GameObject<Monster>();
 const instanceCharacter = new GameObject<Character>();
 
-// instanceChracter에 data push
+// instanceMonster에 데이터 추가
+instanceMonster.data.push({LV: 54, HP: 2000, MP:500, strunGauge:100 });
+
+// instanceChracter에 데이터 추가
 instanceCharacter.data.push({username:"abc", LV:1, HP:1, MP:1, skillTree:["ARROW", "ELEC", "ICE"]});
 
-// instanceCharacter의 값을 콘솔에 출력
+// instanceMonster 콘솔 출력
+console.log("instanceMonster :", instanceMonster.data.map((item)=> item));
+
+// instanceCharacter 콘솔에 출력
 console.log("instanceCharacter :", instanceCharacter.data.map((item)=>item));
 
 // My Function 정의
